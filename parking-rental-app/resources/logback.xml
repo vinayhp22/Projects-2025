@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debud="true">
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
+	
+	<appender name="FILE-OUT"
+		class="ch.qos.logback.core.FileAppender">
+		<file>C:\Users\DELL\OneDrive\Desktop\JAVA_CLASS_2023\logs\app.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -
+				%msg%n</pattern>
+		</encoder>
+	</appender>
+	
+<!--	<logger name="org.springframework" level="debug"
+		additivity="false">
+		<appender-ref ref="FILE-OUT" />
+	</logger>   -->
+
+	<logger name="com.xworkz.parkingrental" level="debug" additivity="false">
+		<appender-ref ref="FILE-OUT" />
+	</logger>
+
+	<root level="error">
+		<appender-ref ref="FILE-OUT" />
+	</root>
+
+</configuration>
